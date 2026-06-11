@@ -5,7 +5,7 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-source /usr/share/zsh/plugins/zsh-vi-mode/zsh-vi-mode.plugin.zsh
+source ${HOME}/.local/share/zsh/plugins/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 
 # History
 HISTFILE=~/.zsh_history
@@ -23,8 +23,8 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 setopt COMPLETE_IN_WORD
 
 # Plugins
-source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ${HOME}/.local/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source ${HOME}/.local/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Zoxide
 eval "$(zoxide init zsh)"
