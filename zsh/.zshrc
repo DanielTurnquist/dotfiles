@@ -21,7 +21,6 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 
 # Tools
 eval "$(zoxide init zsh)"
-function zvm_after_init() { eval "$(starship init zsh)" }
 
 # Environment
 export EDITOR="nvim"
