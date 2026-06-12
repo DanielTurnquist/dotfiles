@@ -19,10 +19,6 @@ autoload -Uz compinit && compinit
 zstyle ':completion:*' menu select
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 
-# Plugins
-source ${HOME}/.local/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-source ${HOME}/.local/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
 # Tools
 eval "$(zoxide init zsh)"
 
