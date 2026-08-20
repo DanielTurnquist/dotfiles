@@ -16,7 +16,10 @@ setopt SHARE_HISTORY HIST_IGNORE_DUPS HIST_IGNORE_SPACE
 
 # Prompt
 autoload -Uz vcs_info
-precmd() { vcs_info }
+precmd() {
+    vcs_info
+    [[ -n "$ZELLIJ" ]] && zellij action rename-tab "zsh" >/dev/null 2>&1
+}
 zstyle ':vcs_info:git:*' formats ' %F{magenta}%b%f'
 setopt PROMPT_SUBST
 PROMPT='%F{blue}%~%f${vcs_info_msg_0_} %F{green}%#%f '
@@ -52,4 +55,12 @@ alias docker-compose=podman-compose
 fastfetch
 
 # Kiro CLI post block. Keep at the bottom of this file.
-[[ -f "${HOME}/.local/share/kiro-cli/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/.local/share/kiro-cli/shell/zshrc.post.zsh"
+export PATH="$HOME/.local/bin:$PATH"
+[[ -d "$HOME/.kiro/bin" ]] && export PATH="$HOME/.kiro/bin:$PATH"
+
+if [[ -n "$ZELLIJ" ]]; then
+    function preexec() {
+        local cmd=${1[(w)1]}
+        zellij action rename-tab "$cmd" >/dev/null 2>&1
+    }
+fi
