@@ -59,3 +59,6 @@ export PATH="$HOME/.local/bin:$PATH"
 
 # Windows Firefox for xdg-open / aws sso login (WSL)
 export BROWSER="/mnt/c/Program Files/Mozilla Firefox/firefox.exe"
+
+# Machine-local / work-only config (not tracked in dotfiles).
+[[ -f "$HOME/.zshrc.local" ]] && source "$HOME/.zshrc.local"
