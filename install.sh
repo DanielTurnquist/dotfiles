@@ -5,6 +5,8 @@ ln -sf "$DOTFILES/zsh/.zshrc" ~/.zshrc
 ln -sf "$DOTFILES/zsh/.zprofile" ~/.zprofile
 mkdir -p ~/.config/zellij
 ln -sf "$DOTFILES/zellij/config.kdl" ~/.config/zellij/config.kdl
+mkdir -p ~/.config
+ln -sfn "$DOTFILES/nvim" ~/.config/nvim
 
 # Zsh plugins
 ZSH_PLUGINS="$HOME/.local/share/zsh/plugins"
