@@ -56,3 +56,6 @@ fastfetch
 # Kiro CLI post block. Keep at the bottom of this file.
 export PATH="$HOME/.local/bin:$PATH"
 [[ -d "$HOME/.kiro/bin" ]] && export PATH="$HOME/.kiro/bin:$PATH"
+
+# Windows Firefox for xdg-open / aws sso login (WSL)
+export BROWSER="/mnt/c/Program Files/Mozilla Firefox/firefox.exe"
